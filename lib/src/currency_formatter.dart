@@ -283,7 +283,8 @@ class CurrencyFieldFormatter extends TextInputFormatter {
     return code >= 48 && code <= 57;
   }
 
-  static String _formatGrouping(String digits, String sep, NumberingSystem system) {
+  static String _formatGrouping(
+      String digits, String sep, NumberingSystem system) {
     if (digits.isEmpty) {
       return '';
     }
