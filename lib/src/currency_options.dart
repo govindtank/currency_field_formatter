@@ -114,14 +114,22 @@ class CurrencyPreset {
   /// Resolves preset by common ISO 4217 code or locale.
   static CurrencyPreset fromLocaleOrCode(String code) {
     final normalized = code.trim().toUpperCase();
-    if (normalized.contains('INR') || normalized.contains('IN')) return inr;
+    if (normalized.contains('INR') || normalized.contains('IN')) {
+      return inr;
+    }
     if (normalized.contains('EUR') ||
         normalized.contains('DE') ||
-        normalized.contains('FR')) return eur;
+        normalized.contains('FR')) {
+      return eur;
+    }
     if (normalized.contains('GBP') ||
         normalized.contains('GB') ||
-        normalized.contains('UK')) return gbp;
-    if (normalized.contains('JPY') || normalized.contains('JP')) return jpy;
+        normalized.contains('UK')) {
+      return gbp;
+    }
+    if (normalized.contains('JPY') || normalized.contains('JP')) {
+      return jpy;
+    }
     return usd;
   }
 }

@@ -276,15 +276,20 @@ class CurrencyFieldFormatter extends TextInputFormatter {
   }
 
   static bool _isDigit(String s) {
-    if (s.isEmpty) return false;
+    if (s.isEmpty) {
+      return false;
+    }
     final code = s.codeUnitAt(0);
     return code >= 48 && code <= 57;
   }
 
-  static String _formatGrouping(
-      String digits, String sep, NumberingSystem system) {
-    if (digits.isEmpty) return '';
-    if (digits.length <= 3) return digits;
+  static String _formatGrouping(String digits, String sep, NumberingSystem system) {
+    if (digits.isEmpty) {
+      return '';
+    }
+    if (digits.length <= 3) {
+      return digits;
+    }
 
     if (system == NumberingSystem.indianLakhCrore) {
       // Indian format: last 3 digits, then groups of 2 (e.g. 10,00,000)
