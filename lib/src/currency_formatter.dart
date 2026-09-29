@@ -31,6 +31,12 @@ class CurrencyFieldFormatter extends TextInputFormatter {
   /// Numbering grouping system (Western vs Indian Lakhs/Crores).
   final NumberingSystem numberingSystem;
 
+  /// Whether negative amounts are allowed.
+  final bool allowNegative;
+
+  /// Optional callback invoked whenever the parsed numeric value changes.
+  final void Function(double value)? onValueChanged;
+
   // Cached parsed values from last format
   double _lastNumericValue = 0.0;
   String _lastIsoString = '0.0';
@@ -46,38 +52,81 @@ class CurrencyFieldFormatter extends TextInputFormatter {
     this.decimalDigits = 2,
     this.maxIntegerDigits = 14,
     this.numberingSystem = NumberingSystem.western,
+    this.allowNegative = false,
+    this.onValueChanged,
   });
 
   /// Preset for US Dollars (`$1,234.50`).
-  factory CurrencyFieldFormatter.usd({bool allowDecimals = true}) =>
-      CurrencyFieldFormatter.fromPreset(CurrencyPreset.usd,
-          allowDecimals: allowDecimals);
+  factory CurrencyFieldFormatter.usd({
+    bool allowDecimals = true,
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
+  }) =>
+      CurrencyFieldFormatter.fromPreset(
+        CurrencyPreset.usd,
+        allowDecimals: allowDecimals,
+        allowNegative: allowNegative,
+        onValueChanged: onValueChanged,
+      );
 
   /// Preset for Indian Rupees with Lakh/Crore grouping (`₹ 1,23,456.75`).
-  factory CurrencyFieldFormatter.inr({bool allowDecimals = true}) =>
-      CurrencyFieldFormatter.fromPreset(CurrencyPreset.inr,
-          allowDecimals: allowDecimals);
+  factory CurrencyFieldFormatter.inr({
+    bool allowDecimals = true,
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
+  }) =>
+      CurrencyFieldFormatter.fromPreset(
+        CurrencyPreset.inr,
+        allowDecimals: allowDecimals,
+        allowNegative: allowNegative,
+        onValueChanged: onValueChanged,
+      );
 
   /// Preset for Euros (`1.234,50 €`).
-  factory CurrencyFieldFormatter.eur({bool allowDecimals = true}) =>
-      CurrencyFieldFormatter.fromPreset(CurrencyPreset.eur,
-          allowDecimals: allowDecimals);
+  factory CurrencyFieldFormatter.eur({
+    bool allowDecimals = true,
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
+  }) =>
+      CurrencyFieldFormatter.fromPreset(
+        CurrencyPreset.eur,
+        allowDecimals: allowDecimals,
+        allowNegative: allowNegative,
+        onValueChanged: onValueChanged,
+      );
 
   /// Preset for British Pounds (`£1,234.50`).
-  factory CurrencyFieldFormatter.gbp({bool allowDecimals = true}) =>
-      CurrencyFieldFormatter.fromPreset(CurrencyPreset.gbp,
-          allowDecimals: allowDecimals);
+  factory CurrencyFieldFormatter.gbp({
+    bool allowDecimals = true,
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
+  }) =>
+      CurrencyFieldFormatter.fromPreset(
+        CurrencyPreset.gbp,
+        allowDecimals: allowDecimals,
+        allowNegative: allowNegative,
+        onValueChanged: onValueChanged,
+      );
 
   /// Preset for Japanese Yen (`¥1,234` zero decimals).
-  factory CurrencyFieldFormatter.jpy() =>
-      CurrencyFieldFormatter.fromPreset(CurrencyPreset.jpy,
-          allowDecimals: false);
+  factory CurrencyFieldFormatter.jpy({
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
+  }) =>
+      CurrencyFieldFormatter.fromPreset(
+        CurrencyPreset.jpy,
+        allowDecimals: false,
+        allowNegative: allowNegative,
+        onValueChanged: onValueChanged,
+      );
 
   /// Creates formatter from a [CurrencyPreset].
   factory CurrencyFieldFormatter.fromPreset(
     CurrencyPreset preset, {
     bool? allowDecimals,
     int? maxIntegerDigits,
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
   }) {
     return CurrencyFieldFormatter(
       symbol: preset.symbol,
@@ -89,6 +138,8 @@ class CurrencyFieldFormatter extends TextInputFormatter {
       decimalDigits: preset.decimalDigits,
       maxIntegerDigits: maxIntegerDigits ?? 14,
       numberingSystem: preset.numberingSystem,
+      allowNegative: allowNegative,
+      onValueChanged: onValueChanged,
     );
   }
 
@@ -96,10 +147,16 @@ class CurrencyFieldFormatter extends TextInputFormatter {
   factory CurrencyFieldFormatter.byLocale(
     String localeOrCode, {
     bool? allowDecimals,
+    bool allowNegative = false,
+    void Function(double)? onValueChanged,
   }) {
     final preset = CurrencyPreset.fromLocaleOrCode(localeOrCode);
-    return CurrencyFieldFormatter.fromPreset(preset,
-        allowDecimals: allowDecimals);
+    return CurrencyFieldFormatter.fromPreset(
+      preset,
+      allowDecimals: allowDecimals,
+      allowNegative: allowNegative,
+      onValueChanged: onValueChanged,
+    );
   }
 
   /// The parsed numeric value (e.g. `1234.50`).
@@ -130,8 +187,12 @@ class CurrencyFieldFormatter extends TextInputFormatter {
     if (newValue.text.isEmpty) {
       _lastNumericValue = 0.0;
       _lastIsoString = '0.0';
+      onValueChanged?.call(0.0);
       return newValue;
     }
+
+    final bool isNegative =
+        allowNegative && newValue.text.trim().startsWith('-');
 
     // 1. Detect if backspace was pressed immediately on a thousand separator
     String textToProcess = newValue.text;
@@ -206,6 +267,9 @@ class CurrencyFieldFormatter extends TextInputFormatter {
 
     // 5. Construct formatted amount string
     final StringBuffer formattedAmount = StringBuffer();
+    if (isNegative) {
+      formattedAmount.write('-');
+    }
     formattedAmount.write(formattedInteger);
 
     if (isParsingDecimals && allowDecimals) {
@@ -214,9 +278,10 @@ class CurrencyFieldFormatter extends TextInputFormatter {
     }
 
     final String amountText = formattedAmount.toString();
-    if (amountText.isEmpty) {
+    if (amountText.isEmpty || amountText == '-') {
       _lastNumericValue = 0.0;
       _lastIsoString = '0.0';
+      onValueChanged?.call(0.0);
       return const TextEditingValue(
         text: '',
         selection: TextSelection.collapsed(offset: 0),
@@ -265,8 +330,10 @@ class CurrencyFieldFormatter extends TextInputFormatter {
     final String parseableInt = intStr.isEmpty ? '0' : intStr;
     final String parseableDec =
         decBuffer.isNotEmpty ? decBuffer.toString() : '0';
-    _lastIsoString = '$parseableInt.$parseableDec';
+    _lastIsoString = '${isNegative ? '-' : ''}$parseableInt.$parseableDec';
     _lastNumericValue = double.tryParse(_lastIsoString) ?? 0.0;
+
+    onValueChanged?.call(_lastNumericValue);
 
     return TextEditingValue(
       text: resultString,
