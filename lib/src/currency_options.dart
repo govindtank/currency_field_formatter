@@ -133,3 +133,37 @@ class CurrencyPreset {
     return usd;
   }
 }
+
+/// Currency helper utility for ISO symbols and formatting presets.
+class CurrencyIsoHelper {
+  /// Maps 3-letter currency code to symbol.
+  static String symbolForCode(String code) {
+    switch (code.toUpperCase()) {
+      case 'USD':
+      case 'CAD':
+      case 'AUD':
+      case 'NZD':
+      case 'SGD':
+        return r'$';
+      case 'EUR':
+        return '€';
+      case 'GBP':
+        return '£';
+      case 'INR':
+        return '₹';
+      case 'JPY':
+      case 'CNY':
+        return '¥';
+      case 'KRW':
+        return '₩';
+      case 'BRL':
+        return r'R$';
+      case 'RUB':
+        return '₽';
+      case 'ZAR':
+        return 'R';
+      default:
+        return code.toUpperCase();
+    }
+  }
+}

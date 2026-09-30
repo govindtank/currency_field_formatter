@@ -16,3 +16,8 @@
 * Built-in presets for USD, INR, EUR, GBP, JPY, and locale-based lookup.
 * Interactive example app with real-time value extraction inspector.
 * 100% test coverage and zero pub.dev warnings.
+
+## 1.1.1
+
+* Added `CurrencyIsoHelper.symbolForCode()` utility mapping.
+* Verified CI and automated pub.dev OIDC deployment.
