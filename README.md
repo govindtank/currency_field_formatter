@@ -1,15 +1,11 @@
 # currency_field_formatter
 
-[![Pub Version](https://img.shields.io/pub/v/currency_field_formatter.svg?style=flat-square&color=blue)](https://pub.dev/packages/currency_field_formatter)
-[![Pub Points](https://img.shields.io/pub/points/currency_field_formatter?style=flat-square&color=2E8B57&label=pub%20points)](https://pub.dev/packages/currency_field_formatter/score)
-[![Pub Likes](https://img.shields.io/pub/likes/currency_field_formatter?style=flat-square)](https://pub.dev/packages/currency_field_formatter)
-[![CI](https://github.com/govindtank/currency_field_formatter/actions/workflows/ci.yml/badge.svg)](https://github.com/govindtank/currency_field_formatter/actions)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
-
-A bulletproof Flutter `TextInputFormatter` for financial, banking, and e-commerce inputs with **exact mathematical cursor tracking**, clean backspace handling on separators, **Indian Lakhs/Crores grouping**, and zero-rounding payment gateway integer accessors (Stripe / Razorpay).
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/govindtank/currency_field_formatter/main/screenshot.svg" width="750" alt="currency_field_formatter demo"/>
+  <a href="https://pub.dev/packages/currency_field_formatter"><img src="https://img.shields.io/pub/v/currency_field_formatter.svg?style=flat-square&color=blue" alt="Pub Version"></a>
+  <a href="https://pub.dev/packages/currency_field_formatter/score"><img src="https://img.shields.io/pub/points/currency_field_formatter?style=flat-square&color=2E8B57&label=pub%20points" alt="Pub Points"></a>
+  <a href="https://pub.dev/packages/currency_field_formatter"><img src="https://img.shields.io/pub/likes/currency_field_formatter?style=flat-square" alt="Pub Likes"></a>
+  <a href="https://github.com/govindtank/currency_field_formatter/actions"><img src="https://github.com/govindtank/currency_field_formatter/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square" alt="License"></a>
 </p>
 
 ---
