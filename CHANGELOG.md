@@ -1,3 +1,7 @@
+## 1.2.1
+
+* **Discovery & Metadata**: Added official funding channels and refined search discovery topics.
+
 ## 1.2.0
 
 * **Showcase Visuals**: Added crisp dark-mode vector SVG showcase banner in README documentation.

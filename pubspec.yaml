@@ -1,14 +1,18 @@
 name: currency_field_formatter
 description: "Bulletproof Flutter currency TextInputFormatter with exact cursor tracking, backspace handling, Indian Lakhs/Crores, and ISO 4217 presets."
-version: 1.2.0
+version: 1.2.1
 homepage: https://github.com/govindtank/currency_field_formatter
 repository: https://github.com/govindtank/currency_field_formatter
+funding:
+  - https://github.com/sponsors/govindtank
+  - https://buymeacoffee.com/govindtanko
+
 topics:
   - currency
-  - text-input-formatter
   - input-formatter
+  - textfield
+  - money
   - fintech
-  - form
 
 platforms:
   android:
