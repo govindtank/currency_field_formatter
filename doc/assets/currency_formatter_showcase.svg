@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
+    <path d="M0,70 H1200 M0,140 H1200 M0,210 H1200 M0,280 H1200 M0,350 H1200 M0,420 H1200 M0,490 H1200 M0,560 H1200" />
+    <path d="M70,0 V630 M140,0 V630 M210,0 V630 M280,0 V630 M350,0 V630 M420,0 V630 M490,0 V630 M560,0 V630 M630,0 V630 M700,0 V630 M770,0 V630 M840,0 V630 M910,0 V630 M980,0 V630 M1050,0 V630 M1120,0 V630" />
+  </g>
+
+  <circle cx="600" cy="315" r="280" fill="#10B981" opacity="0.08" />
+
+  <g filter="url(#cardShadow)">
+    <rect x="150" y="75" width="900" height="480" rx="24" fill="#0F172A" stroke="#1E293B" stroke-width="2" />
+    <rect x="150" y="75" width="900" height="480" rx="24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.4" />
+  </g>
+
+  <text x="190" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="28" fill="#F8FAFC" letter-spacing="-0.5">
+    currency_field_formatter
+  </text>
+  <text x="190" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">
+    Bulletproof TextInputFormatter • Exact Cursor Preservation • Global Currencies (USD, EUR, INR, JPY)
+  </text>
+
+  <g transform="translate(740, 108)">
+    <rect width="130" height="28" rx="14" fill="#065F46" fill-opacity="0.3" stroke="#10B981" stroke-width="1" />
+    <text x="65" y="18" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#34D399">CURSOR LOCKED</text>
+  </g>
+  <g transform="translate(885, 108)">
+    <rect width="125" height="28" rx="14" fill="#1E3A8A" fill-opacity="0.3" stroke="#3B82F6" stroke-width="1" />
+    <text x="62" y="18" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#60A5FA">LAKHS/CRORES</text>
+  </g>
+
+  <!-- Input Field Simulations -->
+  <g transform="translate(240, 215)">
+    <!-- Field 1: USD -->
+    <rect width="720" height="60" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5" />
+    <text x="24" y="38" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">USD</text>
+    <text x="90" y="39" font-family="monospace" font-weight="800" font-size="20" fill="#F8FAFC">$1,234,567.89</text>
+    <rect x="250" y="20" width="2" height="22" fill="#10B981" />
+
+    <!-- Field 2: INR Lakhs / Crores -->
+    <g transform="translate(0, 85)">
+      <rect width="720" height="60" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5" />
+      <text x="24" y="38" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">INR</text>
+      <text x="90" y="39" font-family="monospace" font-weight="800" font-size="20" fill="#F8FAFC">₹ 1,00,00,000</text>
+      <text x="690" y="38" text-anchor="end" font-family="-apple-system, sans-serif" font-size="12" fill="#34D399">1 Crore</text>
+    </g>
+
+    <!-- Field 3: EUR -->
+    <g transform="translate(0, 170)">
+      <rect width="720" height="60" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5" />
+      <text x="24" y="38" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">EUR</text>
+      <text x="90" y="39" font-family="monospace" font-weight="800" font-size="20" fill="#F8FAFC">1.234.567,89 €</text>
+    </g>
+  </g>
+</svg>

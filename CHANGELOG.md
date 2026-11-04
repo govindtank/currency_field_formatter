@@ -1,3 +1,8 @@
+## 1.2.0
+
+* **Showcase Visuals**: Added crisp dark-mode vector SVG showcase banner in README documentation.
+* **Cleaner Distribution**: Excluded example platform directories via `.pubignore` for a smaller package archive.
+
 ## 1.1.2
 
 * docs: update centered vector badges and documentation.

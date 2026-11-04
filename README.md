@@ -8,6 +8,12 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square" alt="License"></a>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/govindtank/currency_field_formatter/main/doc/assets/currency_formatter_showcase.svg" alt="currency_field_formatter Showcase" width="100%">
+</p>
+
+A bulletproof Flutter `TextInputFormatter` for real-time currency formatting with exact cursor tracking, backspace protection, Indian Lakhs/Crores grouping, and global currency presets.
+
 ---
 
 ## ⚡ Why currency_field_formatter?

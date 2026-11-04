@@ -5,6 +5,11 @@ build/
 example/.dart_tool/
 example/build/
 example/.packages
+example/android/
+example/ios/
+example/macos/
+example/windows/
+example/linux/
 .idea/
 *.iml
 .DS_Store
