@@ -16,17 +16,11 @@ topics:
 
 platforms:
   android:
-    supported: true
   ios:
-    supported: true
   linux:
-    supported: true
   macos:
-    supported: true
   windows:
-    supported: true
   web:
-    supported: true
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
