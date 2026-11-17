@@ -342,6 +342,47 @@ class CurrencyFieldFormatter extends TextInputFormatter {
     );
   }
 
+  /// Parses a formatted currency string into its raw double value.
+  double parseNumericValue(String text) {
+    if (text.isEmpty) return 0.0;
+
+    final StringBuffer intBuffer = StringBuffer();
+    final StringBuffer decBuffer = StringBuffer();
+    bool isParsingDecimals = false;
+    bool isNegative = false;
+
+    if (allowNegative && text.trim().startsWith('-')) {
+      isNegative = true;
+    }
+
+    for (int i = 0; i < text.length; i++) {
+      final char = text[i];
+      if (char == decimalSeparator && allowDecimals) {
+        if (!isParsingDecimals) {
+          isParsingDecimals = true;
+        }
+      } else if (_isDigit(char)) {
+        if (!isParsingDecimals) {
+          intBuffer.write(char);
+        } else {
+          decBuffer.write(char);
+        }
+      }
+    }
+
+    final intStr = intBuffer.isEmpty ? '0' : intBuffer.toString();
+    final decStr = decBuffer.isEmpty ? '0' : decBuffer.toString();
+    final isoString = '$intStr.$decStr';
+    final parsed = double.tryParse(isoString) ?? 0.0;
+    return isNegative ? -parsed : parsed;
+  }
+
+  /// The most recently parsed numeric double value.
+  double get lastNumericValue => _lastNumericValue;
+
+  /// The most recently parsed ISO standard decimal string (e.g. `'1250.50'`).
+  String get lastIsoString => _lastIsoString;
+
   static bool _isDigit(String s) {
     if (s.isEmpty) {
       return false;

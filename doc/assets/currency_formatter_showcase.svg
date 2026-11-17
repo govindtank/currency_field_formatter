@@ -1,66 +1,181 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B0F19" />
-      <stop offset="50%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#020617" />
+      <stop offset="0%" stop-color="#080C15" />
+      <stop offset="50%" stop-color="#0D1527" />
+      <stop offset="100%" stop-color="#040711" />
     </linearGradient>
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.65" />
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0B0F19" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.65" />
     </filter>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="680" fill="url(#bg)" />
 
-  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
-    <path d="M0,70 H1200 M0,140 H1200 M0,210 H1200 M0,280 H1200 M0,350 H1200 M0,420 H1200 M0,490 H1200 M0,560 H1200" />
-    <path d="M70,0 V630 M140,0 V630 M210,0 V630 M280,0 V630 M350,0 V630 M420,0 V630 M490,0 V630 M560,0 V630 M630,0 V630 M700,0 V630 M770,0 V630 M840,0 V630 M910,0 V630 M980,0 V630 M1050,0 V630 M1120,0 V630" />
+  <!-- Grid overlay -->
+  <g stroke="#1E293B" stroke-opacity="0.2" stroke-width="1">
+    <path d="M0,68 H1200 M0,136 H1200 M0,204 H1200 M0,272 H1200 M0,340 H1200 M0,408 H1200 M0,476 H1200 M0,544 H1200 M0,612 H1200" />
+    <path d="M68,0 V680 M136,0 V680 M204,0 V680 M272,0 V680 M340,0 V680 M408,0 V680 M476,0 V680 M544,0 V680 M612,0 V680 M680,0 V680 M748,0 V680 M816,0 V680 M884,0 V680 M952,0 V680 M1020,0 V680 M1088,0 V680 M1156,0 V680" />
   </g>
 
-  <circle cx="600" cy="315" r="280" fill="#10B981" opacity="0.08" />
+  <circle cx="280" cy="220" r="220" fill="#10B981" opacity="0.06" />
+  <circle cx="950" cy="420" r="240" fill="#06B6D4" opacity="0.05" />
 
-  <g filter="url(#cardShadow)">
-    <rect x="150" y="75" width="900" height="480" rx="24" fill="#0F172A" stroke="#1E293B" stroke-width="2" />
-    <rect x="150" y="75" width="900" height="480" rx="24" fill="none" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.4" />
+  <!-- Header -->
+  <g transform="translate(60, 42)">
+    <rect width="44" height="44" rx="10" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.5" />
+    <!-- Currency Exchange Icon -->
+    <text x="22" y="28" text-anchor="middle" font-family="-apple-system, sans-serif" font-weight="bold" font-size="20" fill="#10B981">₹</text>
+
+    <text x="60" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" fill="#F8FAFC">
+      currency_field_formatter
+    </text>
+    <text x="60" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">
+      Bank-Grade Amount Input • Zero-Typo Live Words • Quick Addition Chips • UPI Limit Guards
+    </text>
+
+    <!-- Version Badge -->
+    <g transform="translate(940, 6)">
+      <rect width="130" height="30" rx="15" fill="#064E3B" fill-opacity="0.5" stroke="#10B981" stroke-width="1.2" />
+      <text x="65" y="19" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#34D399">v1.3.0 READY</text>
+    </g>
   </g>
 
-  <text x="190" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="28" fill="#F8FAFC" letter-spacing="-0.5">
-    currency_field_formatter
-  </text>
-  <text x="190" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">
-    Bulletproof TextInputFormatter • Exact Cursor Preservation • Global Currencies (USD, EUR, INR, JPY)
-  </text>
+  <!-- LEFT HERO CARD: Bank Transfer & Zero-Typo Words -->
+  <g transform="translate(60, 115)" filter="url(#shadow)">
+    <rect width="640" height="515" rx="20" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
 
-  <g transform="translate(740, 108)">
-    <rect width="130" height="28" rx="14" fill="#065F46" fill-opacity="0.3" stroke="#10B981" stroke-width="1" />
-    <text x="65" y="18" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#34D399">CURSOR LOCKED</text>
-  </g>
-  <g transform="translate(885, 108)">
-    <rect width="125" height="28" rx="14" fill="#1E3A8A" fill-opacity="0.3" stroke="#3B82F6" stroke-width="1" />
-    <text x="62" y="18" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#60A5FA">LAKHS/CRORES</text>
-  </g>
-
-  <!-- Input Field Simulations -->
-  <g transform="translate(240, 215)">
-    <!-- Field 1: USD -->
-    <rect width="720" height="60" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5" />
-    <text x="24" y="38" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">USD</text>
-    <text x="90" y="39" font-family="monospace" font-weight="800" font-size="20" fill="#F8FAFC">$1,234,567.89</text>
-    <rect x="250" y="20" width="2" height="22" fill="#10B981" />
-
-    <!-- Field 2: INR Lakhs / Crores -->
-    <g transform="translate(0, 85)">
-      <rect width="720" height="60" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5" />
-      <text x="24" y="38" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">INR</text>
-      <text x="90" y="39" font-family="monospace" font-weight="800" font-size="20" fill="#F8FAFC">₹ 1,00,00,000</text>
-      <text x="690" y="38" text-anchor="end" font-family="-apple-system, sans-serif" font-size="12" fill="#34D399">1 Crore</text>
+    <!-- Card Header -->
+    <g transform="translate(24, 24)">
+      <text x="0" y="16" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#64748B" letter-spacing="0.8">BANK TRANSFER INTERFACE (CurrencyTextField)</text>
+      
+      <!-- Currency Preset Pill -->
+      <g transform="translate(450, 0)">
+        <rect width="142" height="26" rx="6" fill="#1E293B" stroke="#374151" />
+        <text x="71" y="17" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#67E8F9">INR (₹) Lakhs/Crores ▾</text>
+      </g>
     </g>
 
-    <!-- Field 3: EUR -->
-    <g transform="translate(0, 170)">
-      <rect width="720" height="60" rx="12" fill="#020617" stroke="#334155" stroke-width="1.5" />
-      <text x="24" y="38" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">EUR</text>
-      <text x="90" y="39" font-family="monospace" font-weight="800" font-size="20" fill="#F8FAFC">1.234.567,89 €</text>
+    <!-- The Big Amount Input Box -->
+    <g transform="translate(24, 65)">
+      <rect width="592" height="84" rx="14" fill="#030712" stroke="#10B981" stroke-width="1.8" />
+      
+      <text x="20" y="30" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#64748B">ENTER TRANSFER AMOUNT</text>
+      <text x="20" y="65" font-family="'JetBrains Mono', monospace" font-size="34" font-weight="800" fill="#F8FAFC">₹ 2,50,000.00</text>
+      
+      <!-- Blinking Cursor -->
+      <rect x="290" y="40" width="3" height="30" fill="#10B981" />
+
+      <!-- Clear Button -->
+      <circle cx="560" cy="52" r="14" fill="#1F2937" />
+      <path d="M555 47 L565 57 M565 47 L555 57" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- LIVE SPOKEN WORDS PILL (Zero-Typo Prevention) -->
+    <g transform="translate(24, 162)">
+      <rect width="592" height="42" rx="10" fill="#064E3B" fill-opacity="0.3" stroke="#10B981" stroke-width="1" />
+      <circle cx="24" cy="21" r="10" fill="#10B981" fill-opacity="0.2" />
+      <text x="24" y="25" text-anchor="middle" font-size="11">🗣️</text>
+      <text x="44" y="26" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#34D399">
+        "Two Lakh Fifty Thousand Rupees"
+      </text>
+      <text x="575" y="25" text-anchor="end" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#6EE7B7">PREVENTS ZERO-TYPOS</text>
+    </g>
+
+    <!-- QUICK ADDITION DENOMINATION CHIPS -->
+    <g transform="translate(24, 222)">
+      <text x="0" y="14" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#64748B">QUICK INCREMENT DENOMINATIONS</text>
+      
+      <!-- Chips -->
+      <g transform="translate(0, 24)">
+        <rect x="0" y="0" width="82" height="32" rx="8" fill="#1E293B" stroke="#334155" />
+        <text x="41" y="20" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#10B981">+ ₹500</text>
+
+        <rect x="94" y="0" width="94" height="32" rx="8" fill="#1E293B" stroke="#334155" />
+        <text x="141" y="20" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#10B981">+ ₹1,000</text>
+
+        <rect x="200" y="0" width="94" height="32" rx="8" fill="#1E293B" stroke="#334155" />
+        <text x="247" y="20" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#10B981">+ ₹2,000</text>
+
+        <rect x="306" y="0" width="94" height="32" rx="8" fill="#1E293B" stroke="#334155" />
+        <text x="353" y="20" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#10B981">+ ₹5,000</text>
+
+        <rect x="412" y="0" width="102" height="32" rx="8" fill="#1E293B" stroke="#334155" />
+        <text x="463" y="20" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#10B981">+ ₹10,000</text>
+      </g>
+    </g>
+
+    <!-- LIMIT GUARD WARNING -->
+    <g transform="translate(24, 296)">
+      <rect width="592" height="42" rx="10" fill="#7F1D1D" fill-opacity="0.25" stroke="#EF4444" stroke-width="1" />
+      <text x="16" y="26" font-size="14">⚠️</text>
+      <text x="38" y="26" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#FCA5A5">
+        Exceeds standard UPI transaction limit of ₹ 1,00,000.00
+      </text>
+      <rect x="490" y="9" width="88" height="24" rx="6" fill="#EF4444" fill-opacity="0.2" />
+      <text x="534" y="24" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#F87171">OVER LIMIT</text>
+    </g>
+
+    <!-- Parsed Telemetry -->
+    <g transform="translate(24, 356)">
+      <rect width="592" height="130" rx="12" fill="#030712" stroke="#1F2937" />
+      <text x="18" y="26" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#10B981">PARSED VALUE TELEMETRY</text>
+      <line x1="18" y1="36" x2="574" y2="36" stroke="#1F2937" />
+      
+      <text x="18" y="60" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B">amount (double):</text>
+      <text x="170" y="60" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#67E8F9">250000.00</text>
+
+      <text x="18" y="86" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B">toWords():</text>
+      <text x="170" y="86" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#34D399">"Two Lakh Fifty Thousand Rupees"</text>
+
+      <text x="18" y="112" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B">groupingSystem:</text>
+      <text x="170" y="112" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#FBBF24">NumberingSystem.indianLakhCrore (3, 2, 2)</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Multi-Currency Cards & Features -->
+  <g transform="translate(730, 115)">
+    <!-- Card 1: USD Millions -->
+    <g filter="url(#shadow)">
+      <rect width="410" height="115" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+      <text x="18" y="24" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">US DOLLARS (WESTERN 3, 3 GROUPING)</text>
+      <rect x="18" y="36" width="374" height="46" rx="8" fill="#030712" stroke="#1E293B" />
+      <text x="32" y="66" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#F8FAFC">$ 1,500,000.00</text>
+      <text x="18" y="100" font-family="-apple-system, sans-serif" font-size="10.5" fill="#94A3B8">Spoken: "One Million Five Hundred Thousand Dollars"</text>
+    </g>
+
+    <!-- Card 2: EUR European Space -->
+    <g transform="translate(0, 135)" filter="url(#shadow)">
+      <rect width="410" height="115" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+      <text x="18" y="24" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FBBF24">EURO (SPACE THOUSANDS, COMMA FRACTIONS)</text>
+      <rect x="18" y="36" width="374" height="46" rx="8" fill="#030712" stroke="#1E293B" />
+      <text x="32" y="66" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#F8FAFC">1 250,50 €</text>
+      <text x="18" y="100" font-family="-apple-system, sans-serif" font-size="10.5" fill="#94A3B8">Suffix symbol with space separation &amp; comma decimals</text>
+    </g>
+
+    <!-- Card 3: JPY Zero Decimals -->
+    <g transform="translate(0, 270)" filter="url(#shadow)">
+      <rect width="410" height="115" rx="16" fill="url(#cardGrad)" stroke="#1F2937" stroke-width="1.5" />
+      <text x="18" y="24" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#EC4899">JAPANESE YEN (ZERO-DECIMAL CURRENCY)</text>
+      <rect x="18" y="36" width="374" height="46" rx="8" fill="#030712" stroke="#1E293B" />
+      <text x="32" y="66" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#F8FAFC">¥ 45,000</text>
+      <text x="18" y="100" font-family="-apple-system, sans-serif" font-size="10.5" fill="#94A3B8">Strict integer currency formatting with no decimal point</text>
+    </g>
+
+    <!-- Pub Command Box -->
+    <g transform="translate(0, 405)" filter="url(#shadow)">
+      <rect width="410" height="108" rx="16" fill="#030712" stroke="#10B981" stroke-width="1.2" />
+      <text x="18" y="30" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#10B981">INSTALL WITH 1 COMMAND</text>
+      <rect x="18" y="44" width="374" height="44" rx="8" fill="#0B132B" stroke="#1E293B" />
+      <text x="30" y="71" font-family="'JetBrains Mono', monospace" font-size="12.5" fill="#34D399">$ flutter pub add currency_field_formatter</text>
     </g>
   </g>
 </svg>

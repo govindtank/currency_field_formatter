@@ -1,6 +1,11 @@
 # Miscellaneous
 *.class
 *.lock
+.idea/
+*.iml
+example/.idea/
+example/*.iml
+example/build/
 *.log
 *.pyc
 *.swp

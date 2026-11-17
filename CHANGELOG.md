@@ -1,3 +1,13 @@
+## 1.3.0
+
+* **Turnkey `CurrencyTextField` Widget**: Drop-in bank-grade text field bundling formatting, zero-typo spoken words, denomination chips, and transaction limit checks.
+* **Live Number-to-Words Engine (`CurrencyWords`)**: Real-time conversion into Indian spoken words (`250000` -> *"Two Lakh Fifty Thousand Rupees"*, *"One Crore Fifty-Four Lakh Rupees"*) and Western words (*"One Million Five Hundred Thousand Dollars"*), preventing disastrous zero-typos in banking transfers.
+* **Quick Denomination Addition Chips**: One-tap increment pill buttons (`+ ₹500`, `+ ₹1,000`, `+ ₹5,000`, `+ ₹10,000`) for seamless fintech amounts.
+* **Transaction Limit & Compliance Guards**: Configurable `minLimit` and `maxLimit` (such as standard UPI ₹1,00,000 limit) with real-time warning indicators.
+* **Public Parser Method**: Added `parseNumericValue(String)` to `CurrencyFieldFormatter` for easily extracting double amounts from raw strings.
+* **Overhauled Interactive Web Demo**: Full banking transfer sandbox with real-time telemetry inspector, preset currency switcher, and live zero-typo words helper.
+* **Upgraded Vector Showcase**: Crisp, high-fidelity UI demonstration graphic showing real working cards with no text clipping.
+
 ## 1.2.1
 
 * **Discovery & Metadata**: Added official funding channels and refined search discovery topics.
