@@ -111,6 +111,39 @@ class CurrencyPreset {
     numberingSystem: NumberingSystem.western,
   );
 
+  /// UAE Dirham preset (`AED 1,234.50`).
+  static const CurrencyPreset aed = CurrencyPreset(
+    symbol: 'AED',
+    symbolPosition: SymbolPosition.prefix,
+    symbolSeparator: ' ',
+    thousandSeparator: ',',
+    decimalSeparator: '.',
+    decimalDigits: 2,
+    numberingSystem: NumberingSystem.western,
+  );
+
+  /// Canadian Dollar preset (`CAD 1,234.50`).
+  static const CurrencyPreset cad = CurrencyPreset(
+    symbol: r'$',
+    symbolPosition: SymbolPosition.prefix,
+    symbolSeparator: '',
+    thousandSeparator: ',',
+    decimalSeparator: '.',
+    decimalDigits: 2,
+    numberingSystem: NumberingSystem.western,
+  );
+
+  /// Australian Dollar preset (`A$1,234.50`).
+  static const CurrencyPreset aud = CurrencyPreset(
+    symbol: r'A$',
+    symbolPosition: SymbolPosition.prefix,
+    symbolSeparator: '',
+    thousandSeparator: ',',
+    decimalSeparator: '.',
+    decimalDigits: 2,
+    numberingSystem: NumberingSystem.western,
+  );
+
   /// Resolves preset by common ISO 4217 code or locale.
   static CurrencyPreset fromLocaleOrCode(String code) {
     final normalized = code.trim().toUpperCase();

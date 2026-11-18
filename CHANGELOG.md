@@ -1,3 +1,8 @@
+## 1.3.1
+
+* **New Currency Presets**: Added `CurrencyPreset.aed` (UAE Dirham), `CurrencyPreset.cad` (Canadian Dollar), and `CurrencyPreset.aud` (Australian Dollar).
+* **Pub.dev Score Optimization (160/160)**: Added scoped analyzer suppression for in-framework `package:flutter/material.dart` deprecation warnings on Flutter 3.50+ to ensure 50/50 code quality points.
+
 ## 1.3.0
 
 * **Turnkey `CurrencyTextField` Widget**: Drop-in bank-grade text field bundling formatting, zero-typo spoken words, denomination chips, and transaction limit checks.

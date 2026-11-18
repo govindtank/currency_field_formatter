@@ -106,5 +106,15 @@ void main() {
       expect(formatter.numericValue, 50000.0);
       expect(formatter.integerCents, 50000);
     });
+
+    test('AED Dirham preset formatting', () {
+      final formatter = CurrencyFieldFormatter.fromPreset(CurrencyPreset.aed);
+      final result = formatter.formatEditUpdate(
+        TextEditingValue.empty,
+        const TextEditingValue(text: '1250.50'),
+      );
+      expect(result.text, 'AED 1,250.50');
+      expect(formatter.numericValue, 1250.50);
+    });
   });
 }

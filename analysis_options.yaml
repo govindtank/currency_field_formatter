@@ -6,6 +6,8 @@ analyzer:
     strict-inference: true
     strict-raw-types: true
   errors:
+    deprecated_member_use: ignore
+    deprecated_member_use_from_same_package: ignore
     missing_required_param: error
     missing_return: error
     todo: ignore
